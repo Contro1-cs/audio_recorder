@@ -1,5 +1,4 @@
 
-import 'package:flutter/material.dart';
 import 'package:flutter_sound_lite/flutter_sound.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -35,8 +34,7 @@ class SoundRecorder {
     await _audioRecorder!.startRecorder(toFile: savePath);
 
   }
-  Future _stop() async {
-    if(_isRecorderInitialized) return;
+  Future<String?> _stop() async {
     _audioRecorder!.closeAudioSession();
     return await _audioRecorder!.stopRecorder();
   }
